@@ -23,7 +23,7 @@ basic.forever(function () {
     }
     if (current_head_down_time >= 5) {
         current_head_down_time = 0
-        soundExpression.giggle.play()
-        control.waitMicros(1000)
+        music.playTone(262, music.beat(BeatFraction.Sixteenth))
     }
+    control.waitMicros(1000)
 })

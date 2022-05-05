@@ -15,7 +15,7 @@ head_count = 0
 let current_head_down_time = 0
 angle_threshold = 100
 basic.forever(function () {
-    if (input.rotation(Rotation.Pitch) > 100) {
+    if (input.rotation(Rotation.Pitch) > angle_threshold) {
         current_head_down_time += 1
         head_count += 1
     } else {
@@ -25,5 +25,5 @@ basic.forever(function () {
         current_head_down_time = 0
         music.playTone(262, music.beat(BeatFraction.Sixteenth))
     }
-    control.waitMicros(1000)
+    basic.pause(500)
 })
